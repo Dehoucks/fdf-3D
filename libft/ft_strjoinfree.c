@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/18 11:16:53 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/09/18 11:18:55 by mtacnet          ###   ########.fr       */
+/*   Created: 2022/02/18 09:58:21 by robindehouc       #+#    #+#             */
+/*   Updated: 2022/02/18 10:02:30 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

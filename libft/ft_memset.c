@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/07 12:09:03 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/02/07 12:09:05 by mtacnet          ###   ########.fr       */
+/*   Created: 2022/02/18 09:58:21 by robindehouc       #+#    #+#             */
+/*   Updated: 2022/02/18 10:01:20 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 15:28:42 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/09/19 17:45:56 by mtacnet          ###   ########.fr       */
+/*   Created: 2022/02/18 09:58:21 by robindehouc       #+#    #+#             */
+/*   Updated: 2022/02/18 09:59:49 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

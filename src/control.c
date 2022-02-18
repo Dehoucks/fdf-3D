@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/14 10:46:17 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/10/04 11:40:04 by mtacnet          ###   ########.fr       */
+/*   Created: 2022/02/17 22:46:01 by robindehouc       #+#    #+#             */
+/*   Updated: 2022/02/17 22:46:03 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

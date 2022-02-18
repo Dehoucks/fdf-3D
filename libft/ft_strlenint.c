@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlenint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mtacnet <mtacnet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/27 14:08:49 by mtacnet           #+#    #+#             */
-/*   Updated: 2017/04/28 13:22:00 by mtacnet          ###   ########.fr       */
+/*   Created: 2022/02/18 09:58:21 by robindehouc       #+#    #+#             */
+/*   Updated: 2022/02/18 10:02:37 by robindehouc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
