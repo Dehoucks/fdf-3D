@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:24 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 13:33:55 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/18 16:14:13 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void		alloc_tab(t_param **mlx)
 	int		i;
 
 	i = 0;
-	(*mlx)->tab = (int**)ft_memalloc(sizeof(int*) * (*mlx)->nb_line);
-	while (i < (*mlx)->nb_line)
+	(*mlx)->tab = (int**)ft_memalloc(sizeof(int*) * (*mlx)->nline);
+	while (i < (*mlx)->nline)
 	{
-		(*mlx)->tab[i] = (int*)ft_memalloc(sizeof(int) * (*mlx)->nb_col);
+		(*mlx)->tab[i] = (int*)ft_memalloc(sizeof(int) * (*mlx)->ncol);
 		i++;
 	}
 }
@@ -46,10 +46,10 @@ void			map_to_tab(t_param **mlx, char *map)
 	alloc_tab(mlx);
 	verif_content((*mlx)->tab);
 	i = 0;
-	while (x < (*mlx)->nb_line)
+	while (x < (*mlx)->nline)
 	{
 		y = 0;
-		while (y < (*mlx)->nb_col)
+		while (y < (*mlx)->ncol)
 		{
 			while (map[i] && ft_isspace(map[i]) == 1)
 				i++;
@@ -73,7 +73,7 @@ char			*map_to_string(char *argv, t_param **mlx)
 	line = NULL;
 	tmp = NULL;
 	map = NULL;
-	if (!(map = ft_memalloc(sizeof((*mlx)->nb_col * (*mlx)->nb_line) + 1)))
+	if (!(map = ft_memalloc(sizeof((*mlx)->ncol * (*mlx)->nline) + 1)))
 		exit(EXIT_FAILURE);
 	fd = open(argv, O_RDONLY);
 	verif_fd(fd);

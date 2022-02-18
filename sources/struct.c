@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:30 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/17 22:46:32 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 16:03:44 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	init_struct_mlx(t_param **mlx)
 	(*mlx)->height = 1600;
 	(*mlx)->width = 960;
 	(*mlx)->alt = 2;
-	(*mlx)->nb_line = 0;
-	(*mlx)->nb_col = 0;
+	(*mlx)->nline = 0;
+	(*mlx)->ncol = 0;
 	(*mlx)->color = 0xFFFFFF;
 	(*mlx)->shift_x = 200;
 	(*mlx)->shift_y = 200;

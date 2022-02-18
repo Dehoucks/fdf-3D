@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:01 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 13:44:55 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/18 16:14:28 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int		verif_line(char *line, int i, t_param **mlx)
 
 	j = 0;
 	if (i == 0)
-		(*mlx)->nb_col = ft_countword(line, ' ');
+		(*mlx)->ncol = ft_countword(line, ' ');
 	if (i != 0)
 	{
 		j = ft_countword(line, ' ');
-		if (j != (*mlx)->nb_col)
+		if (j != (*mlx)->ncol)
 		{
 			ft_putendl("The file provided is not correctly formated.");
 			return (1);
@@ -62,7 +62,7 @@ int				check_map(char *map, t_param **mlx)
 		i++;
 		ft_strdel(&line);
 	}
-	(*mlx)->nb_line = i;
+	(*mlx)->nline = i;
 	close(fd);
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   core.c                                             :+:      :+:    :+:   */
+/*   factory.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:07 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 13:49:26 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/18 16:03:53 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,9 @@ void			pixel_linker(t_coord **pos, t_param **mlx)
 	ft_paint(mlx, (*pos)->x2, (*pos)->y2);
 }
 
-void			core(t_param **mlx)
+// ft_factory manage : sending all the index of the file read
+//					   monitor which keys are pressed until the window is terminated.
+void			ft_factory(t_param **mlx)
 {
 	t_coord		pos;
 	int			i;
@@ -102,10 +104,10 @@ void			core(t_param **mlx)
 	i = 0;
 	j = 0;
 	init_struct_coord(&pos);
-	while (i < (*mlx)->nb_line)
+	while (i < (*mlx)->nline)
 	{
 		j = 0;
-		while (j < (*mlx)->nb_col)
+		while (j < (*mlx)->ncol)
 		{
 			set_pos(i, j, mlx, &pos);
 			j++;
@@ -113,6 +115,6 @@ void			core(t_param **mlx)
 		i++;
 	}
 	view_usage(2, mlx);
-	mlx_hook((*mlx)->win, 2, 3, manage_key, mlx);
+	mlx_hook((*mlx)->win, 2, 3, key_manager, mlx);
 	mlx_loop((*mlx)->id);
 }

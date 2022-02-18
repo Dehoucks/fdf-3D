@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:36 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 13:47:12 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/02/18 16:03:42 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	set_pos(int i, int j, t_param **mlx, t_coord *pos)
 {	
 	// printf("i === %d // j === %d\n", i, j);
 	// printf("i j = %d, i+1 j = %d, i j+1 = %d\n", (*mlx)->tab[i][j], (*mlx)->tab[i+1][j], (*mlx)->tab[i][j+1]);
-	if (i < (*mlx)->nb_line - 1)
+	if (i < (*mlx)->nline - 1)
 	{	
 		pos->x1 = ((j - i) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
 		printf("1 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);
@@ -30,7 +30,7 @@ void	set_pos(int i, int j, t_param **mlx, t_coord *pos)
 		printf("1 y2  %d - (%d;%d) == %d\n", pos->y2, i+1, j,(*mlx)->tab[i+1][j]);
 		pixel_linker(&pos, mlx);
 	}
-	if (j < (*mlx)->nb_col - 1)
+	if (j < (*mlx)->ncol - 1)
 	{
 		pos->x1 = ((j - i) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
 		printf("2 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);

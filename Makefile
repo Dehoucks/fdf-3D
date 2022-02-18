@@ -3,28 +3,25 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+         #
+#    By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/18 10:07:42 by robindehouc       #+#    #+#              #
-#    Updated: 2022/02/18 10:07:50 by robindehouc      ###   ########.fr        #
+#    Updated: 2022/02/18 16:25:12 by rdehouck         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= fdf
 
-GREEN		= "\033[32m"
-RESET		= "\033[0m"
-
-# src / obj files
-SRC			= 	main.c \
+# SOURCES / obj files
+SOURCES			= 	main.c \
 				struct.c \
 				control.c \
 				processing.c \
 				utils.c \
-				core.c \
-				manage_key.c
+				factory.c \
+				key_manager.c
 
-OBJ			= $(addprefix $(OBJDIR),$(SRC:.c=.o))
+OBJ			= $(addprefix $(OBJDIR),$(SOURCES:.c=.o))
 
 # compiler
 CC			= gcc
@@ -43,7 +40,7 @@ FT_INC 		= -I ./libft
 FT_LNK 		= -L ./libft -l ft
 
 # directories
-SRCDIR		= ./src/
+SOURCESDIR		= ./sources/
 INCDIR		= ./includes/
 OBJDIR		= ./obj/
 
@@ -52,7 +49,7 @@ all: obj $(FT_LIB) $(MLX_LIB) $(NAME)
 obj:
 		@mkdir -p $(OBJDIR)
 
-$(OBJDIR)%.o:$(SRCDIR)%.c
+$(OBJDIR)%.o:$(SOURCESDIR)%.c
 		$(CC) $(CFLAGS) $(MLX_INC) $(FT_INC) -I $(INCDIR) -o $@ -c $<
 
 $(FT_LIB):
@@ -63,7 +60,6 @@ $(MLX_LIB):
 
 $(NAME): $(OBJ)
 		@$(CC) $(OBJ) $(MLX_LNK) $(FT_LNK) -lm -o $(NAME)
-		@echo $(GREEN)"Compilation done !" $(RESET)
 
 clean:
 		@rm -rf $(OBJDIR)

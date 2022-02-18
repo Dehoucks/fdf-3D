@@ -3,51 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   manage_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:19 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/17 22:47:57 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 15:57:32 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-/*
-** Zoom +: 69 / 24 (touche +)
-** Zoom -: 78 / 27(touche -)
-** Echap (quit): 53 (touche ESC)
-** Altitude +: 126 (fleche haut)
-** Altitude -: 125 (fleche bas)
-*/
 
-static void		rear_zoom(t_param **mlx)
+// Zoom out is limited to 0.01.
+static void		zoom_out(t_param **mlx)
 {
-	(*mlx)->zoom -= 0.02;
+	(*mlx)->zoom -= 0.05;
 	if ((*mlx)->zoom < 0.01)
 		(*mlx)->zoom = 0.01;
 }
-
-static void		change_color(int keycode, t_param **mlx)
-{
-	if (keycode == 83)
-		(*mlx)->color = 0xFFFFFF;
-	if (keycode == 84)
-		(*mlx)->color = 0xFF0000;
-	if (keycode == 85)
-		(*mlx)->color = 0x00FF00;
-	if (keycode == 86)
-		(*mlx)->color = 0x0000FF;
-	if (keycode == 87)
-		(*mlx)->color = 0xFF00FF;
-	if (keycode == 88)
-		(*mlx)->color = 0xFFFF00;
-	if (keycode == 89)
-		(*mlx)->color = 0xFD6C9E;
-	if (keycode == 91)
-		(*mlx)->color = 0x26C4EC;
-	if (keycode == 92)
-		(*mlx)->color = 0xAE642D;
-}
-
+// Move 10px in selected direction
 static void		move(int keycode, t_param **mlx)
 {
 	if (keycode == 2)
@@ -60,12 +32,35 @@ static void		move(int keycode, t_param **mlx)
 		(*mlx)->shift_y -= 10;
 }
 
-int				manage_key(int keycode, t_param **mlx)
+static void		color_switch(int keycode, t_param **mlx)
+{
+	if (keycode == 83)
+		(*mlx)->color = 0xceff00;
+	if (keycode == 84)
+		(*mlx)->color = 0xFFFF00;
+	if (keycode == 85)
+		(*mlx)->color = 0x00FF00;
+	if (keycode == 86)
+		(*mlx)->color = 0x0000FF;
+	if (keycode == 87)
+		(*mlx)->color = 0xFF00FF;
+	if (keycode == 88)
+		(*mlx)->color = 0xFF0000;
+	if (keycode == 89)
+		(*mlx)->color = 0xFE6C9E;
+	if (keycode == 91)
+		(*mlx)->color = 0x24C8EC;
+	if (keycode == 92)
+		(*mlx)->color = 0xFFFFFF;
+}
+
+// Key Manager : Detect when a key is pressed and proceed to modificate the current window.
+int				key_manager(int keycode, t_param **mlx)
 {
 	if (keycode == 69 || keycode == 24)
 		(*mlx)->zoom += 0.02;
 	if (keycode == 78 || keycode == 27)
-		rear_zoom(mlx);
+		zoom_out(mlx);
 	if (keycode == 53)
 	{
 		mlx_destroy_window((*mlx)->id, (*mlx)->win);
@@ -78,10 +73,10 @@ int				manage_key(int keycode, t_param **mlx)
 	if (keycode == 125)
 		(*mlx)->alt -= 5;
 	if (keycode >= 83 && keycode <= 92)
-		change_color(keycode, mlx);
+		color_switch(keycode, mlx);
 	if (keycode >= 0 && keycode <= 13)
 		move(keycode, mlx);
 	mlx_clear_window((*mlx)->id, (*mlx)->win);
-	core(mlx);
+	ft_factory(mlx);
 	return (0);
 }
