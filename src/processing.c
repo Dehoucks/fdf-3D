@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   processing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:24 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/17 22:46:26 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:33:55 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
-void			f_norme(t_param **mlx, int x, int y)
+void			ft_paint(t_param **mlx, int x, int y)
 {
 	mlx_pixel_put((*mlx)->id, (*mlx)->win, x, y, (*mlx)->color);
 }

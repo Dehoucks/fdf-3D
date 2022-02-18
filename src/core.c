@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:07 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/17 22:46:09 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:49:26 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
+// In case x1 > x2, then we will switch p1 with p2
+// We act accordingly because the pixel_linker has been created to print_pix from left to right
 static void		verif(t_coord **pos)
 {
 	int		tmp;
@@ -27,7 +29,7 @@ static void		verif(t_coord **pos)
 	}
 }
 
-static void		draw2(t_coord **pos, t_param **mlx, int dx, int dy)
+static void		pixel_linker2(t_coord **pos, t_param **mlx, int dx, int dy)
 {
 	int		e;
 	int		i;
@@ -57,7 +59,11 @@ static void		assign_values(int e, int dx, int dy)
 	dy = (dx >= dy) ? dy * 2 : e * 2;
 }
 
-void			draw(t_coord **pos, t_param **mlx)
+// draw function will print a segment between two points, pixel by pixel.
+// for eg. : p1(775; 485)
+//           p2(800; 490)
+// print_pix(775; 485), then print_pix(776:486) ... print_pix(x1++: y1++) ... print_pix (800; 490)
+void			pixel_linker(t_coord **pos, t_param **mlx)
 {
 	int		dx;
 	int		dy;
@@ -67,12 +73,13 @@ void			draw(t_coord **pos, t_param **mlx)
 	e = 0;
 	dy = (*pos)->y2 - (*pos)->y1;
 	dx = (*pos)->x2 - (*pos)->x1;
+	printf("dx = %d // dy = %d\n", dx, dy);
 	if (dy >= 0)
 	{
 		while ((*pos)->x1 < (*pos)->x2)
 		{
 			assign_values(e, dx, dy);
-			f_norme(mlx, (*pos)->x1, (*pos)->y1);
+			ft_paint(mlx, (*pos)->x1, (*pos)->y1);
 			if ((e = (dx >= dy) ? e - dy : e - dx) < 0)
 			{
 				(dx >= dy) ? (*pos)->y1++ : (*pos)->x1++;
@@ -82,8 +89,8 @@ void			draw(t_coord **pos, t_param **mlx)
 		}
 	}
 	else
-		draw2(pos, mlx, dx, dy);
-	f_norme(mlx, (*pos)->x2, (*pos)->y2);
+		pixel_linker2(pos, mlx, dx, dy);
+	ft_paint(mlx, (*pos)->x2, (*pos)->y2);
 }
 
 void			core(t_param **mlx)

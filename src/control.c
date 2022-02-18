@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:01 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/17 22:46:03 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:44:55 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		verif_line(char *line, int i, t_param **mlx)
 		j = ft_countword(line, ' ');
 		if (j != (*mlx)->nb_col)
 		{
-			ft_putendl("Found wrong line length. Exiting.");
+			ft_putendl("The file provided is not correctly formated.");
 			return (1);
 		}
 	}

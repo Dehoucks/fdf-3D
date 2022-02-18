@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: robindehouck <robindehouck@student.42.f    +#+  +:+       +#+        */
+/*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 13:32:22 by mtacnet           #+#    #+#             */
-/*   Updated: 2022/02/16 19:17:59 by robindehouc      ###   ########.fr       */
+/*   Updated: 2022/02/18 13:46:50 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,7 @@ typedef struct		s_param
 	t_coord			coord;
 }					t_param;
 
-/*
-** MAIN FUNCTIONS
-*/
-
-void				draw(t_coord **pos, t_param **mlx);
+void				pixel_linker(t_coord **pos, t_param **mlx);
 void				set_pos(int i, int j, t_param **mlx, t_coord *pos);
 void				view_usage(int value, t_param **mlx);
 void				init_struct_mlx(t_param **mlx);
@@ -56,7 +52,7 @@ void				verif_content(void *var);
 void				init_mlx(t_param **mlx);
 void				core(t_param **mlx);
 void				init_mlx(t_param **mlx);
-void				f_norme(t_param **mlx, int x, int y);
+void				ft_paint(t_param **mlx, int x, int y);
 void				verif_fd(int fd);
 char				*map_to_string(char *map, t_param **mlx);
 int					check_map(char *argv, t_param **mlx);
