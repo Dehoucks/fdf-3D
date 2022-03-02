@@ -6,11 +6,13 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:13 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 16:19:15 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/02 13:06:43 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
+// I still need to handle the new part of the subject :
+//	Exiting the program when pushing the cross of the window
 
 int				main(int argc, char **argv)
 {
