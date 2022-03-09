@@ -6,12 +6,21 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:19 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/03/09 13:21:00 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 14:35:23 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 
+// Cross Manager : Detect when the window's cross is clicked. If it's clicked, the window is closed.
+int					cross_manager(t_param **mlx)
+{
+	mlx_destroy_window((*mlx)->id, (*mlx)->win);
+	ft_memdel((void**)mlx);
+	ft_putendl("QUIT");
+	exit(EXIT_SUCCESS);
+	return (0);
+}
 // Zoom out is limited to 0.01.
 static void		zoom_out(t_param **mlx)
 {
@@ -52,15 +61,6 @@ static void		color_switch(int keycode, t_param **mlx)
 		(*mlx)->color = 0x24C8EC;
 	if (keycode == 92)
 		(*mlx)->color = 0xFFFFFF;
-}
-// Cross Manager : Detect when the window's cross is clicked. If it's clicked, the window is closed.
-int					cross_manager(t_param **mlx)
-{
-	mlx_destroy_window((*mlx)->id, (*mlx)->win);
-	ft_memdel((void**)mlx);
-	ft_putendl("QUIT");
-	exit(EXIT_SUCCESS);
-	return (0);
 }
 
 // Key Manager : Detect when a key is pressed and proceed to modificate the current window.

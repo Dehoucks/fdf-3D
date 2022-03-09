@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:07 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/03/09 13:19:53 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 14:37:09 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ static void		assign_values(int e, int dx, int dy)
 	dy = (dx >= dy) ? dy * 2 : e * 2;
 }
 
-// draw function will print a segment between two points, pixel by pixel.
+// pixel_linker function will print a segment between two points, pixel by pixel.
 // for eg. : p1(775; 485)
 //           p2(800; 490)
-// print_pix(775; 485), then print_pix(776:486) ... print_pix(x1++: y1++) ... print_pix (800; 490)
+// ft_paint(775; 485), then ft_paint(776:486) ... ft_paint(x1++: y1++) ... ft_paint (800; 490)
 void			pixel_linker(t_coord **pos, t_param **mlx)
 {
 	int		dx;
@@ -93,8 +93,8 @@ void			pixel_linker(t_coord **pos, t_param **mlx)
 	ft_paint(mlx, (*pos)->x2, (*pos)->y2);
 }
 
-// ft_factory manage : sending all the index of the file read
-//					   monitor which keys are pressed until the window is terminated.
+// ft_factory manage : - sending all the index of the file read
+//					   - monitor which keys are pressed until the window is terminated.
 void			ft_factory(t_param **mlx)
 {
 	t_coord		pos;

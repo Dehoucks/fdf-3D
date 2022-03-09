@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:36 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/03/09 12:25:08 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 16:07:54 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	set_pos(int i, int j, t_param **mlx, t_coord *pos)
 
 void	init_mlx(t_param **mlx)
 {
+	void	*img;
 	if (!((*mlx)->id = mlx_init()))
 	{
 		ft_putendl("mlx_init issue.");
