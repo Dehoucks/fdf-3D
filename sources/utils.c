@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:36 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 16:03:42 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 12:25:08 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,29 @@ void	set_pos(int i, int j, t_param **mlx, t_coord *pos)
 	if (i < (*mlx)->nline - 1)
 	{	
 		pos->x1 = ((j - i) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
-		printf("1 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);
+		// printf("1 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);
 		pos->y1 = ((j + i) * 10 + 300 - (*mlx)->tab[i][j] * (*mlx)->alt) *
 			(*mlx)->zoom + (*mlx)->shift_y;
-		printf("1 y1  %d - (%d;%d) == %d\n", pos->y1, i, j,(*mlx)->tab[i][j]);
+		// printf("1 y1  %d - (%d;%d) == %d\n", pos->y1, i, j,(*mlx)->tab[i][j]);
 		pos->x2 = ((j - (i + 1)) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
-		printf("1 x2  %d - (%d;%d) == %d\n", pos->x2, i+1, j,(*mlx)->tab[i+1][j]);
+		// printf("1 x2  %d - (%d;%d) == %d\n", pos->x2, i+1, j,(*mlx)->tab[i+1][j]);
 		pos->y2 = ((j + (i + 1)) * 10 + 300 - (*mlx)->tab[i + 1][j] *
 				(*mlx)->alt) * (*mlx)->zoom + (*mlx)->shift_y;
-		printf("1 y2  %d - (%d;%d) == %d\n", pos->y2, i+1, j,(*mlx)->tab[i+1][j]);
+		// printf("1 y2  %d - (%d;%d) == %d\n", pos->y2, i+1, j,(*mlx)->tab[i+1][j]);
 		pixel_linker(&pos, mlx);
 	}
 	if (j < (*mlx)->ncol - 1)
 	{
 		pos->x1 = ((j - i) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
-		printf("2 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);
+		// printf("2 x1  %d - (%d;%d) == %d\n", pos->x1, i, j,(*mlx)->tab[i][j]);
 		pos->y1 = ((j + i) * 10 + 300 - (*mlx)->tab[i][j] *
 				(*mlx)->alt) * (*mlx)->zoom + (*mlx)->shift_y;
-		printf("2 y1  %d - (%d;%d) == %d\n", pos->y1, i, j,(*mlx)->tab[i][j]);
+		// printf("2 y1  %d - (%d;%d) == %d\n", pos->y1, i, j,(*mlx)->tab[i][j]);
 		pos->x2 = (((j + 1) - i) * 50 + 800) * (*mlx)->zoom + (*mlx)->shift_x;
-		printf("2 x2  %d - (%d;%d) == %d\n", pos->x2, i, j+1,(*mlx)->tab[i][j+1]);
+		// printf("2 x2  %d - (%d;%d) == %d\n", pos->x2, i, j+1,(*mlx)->tab[i][j+1]);
 		pos->y2 = (((j + 1) + i) * 10 + 300 - (*mlx)->tab[i][j + 1] *
 				(*mlx)->alt) * (*mlx)->zoom + (*mlx)->shift_y;
-		printf("2 y2  %d - (%d;%d) == %d\n", pos->y2, i, j+1,(*mlx)->tab[i][j+1]);
+		// printf("2 y2  %d - (%d;%d) == %d\n", pos->y2, i, j+1,(*mlx)->tab[i][j+1]);
 		pixel_linker(&pos, mlx);
 	}
 }

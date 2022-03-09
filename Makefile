@@ -6,7 +6,7 @@
 #    By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/18 10:07:42 by robindehouc       #+#    #+#              #
-#    Updated: 2022/02/18 16:25:12 by rdehouck         ###   ########lyon.fr    #
+#    Updated: 2022/03/09 12:32:51 by rdehouck         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURCES			= 	main.c \
 				processing.c \
 				utils.c \
 				factory.c \
-				key_manager.c
+				key_manager.c \
 
 OBJ			= $(addprefix $(OBJDIR),$(SOURCES:.c=.o))
 

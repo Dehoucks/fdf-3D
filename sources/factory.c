@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 22:46:07 by robindehouc       #+#    #+#             */
-/*   Updated: 2022/02/18 16:03:53 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 13:19:53 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void			pixel_linker(t_coord **pos, t_param **mlx)
 	e = 0;
 	dy = (*pos)->y2 - (*pos)->y1;
 	dx = (*pos)->x2 - (*pos)->x1;
-	printf("dx = %d // dy = %d\n", dx, dy);
+	// printf("dx = %d // dy = %d\n", dx, dy);
 	if (dy >= 0)
 	{
 		while ((*pos)->x1 < (*pos)->x2)
@@ -115,6 +115,7 @@ void			ft_factory(t_param **mlx)
 		i++;
 	}
 	view_usage(2, mlx);
-	mlx_hook((*mlx)->win, 2, 3, key_manager, mlx);
+	mlx_hook((*mlx)->win, 17, 17, cross_manager, mlx);
+	mlx_key_hook((*mlx)->win, key_manager, mlx);
 	mlx_loop((*mlx)->id);
 }

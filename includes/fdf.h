@@ -6,7 +6,7 @@
 /*   By: rdehouck <rdehouck@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 12:05:56 by rdehouck          #+#    #+#             */
-/*   Updated: 2022/03/09 12:06:00 by rdehouck         ###   ########lyon.fr   */
+/*   Updated: 2022/03/09 13:19:50 by rdehouck         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct		s_param
 
 int					check_map(char *argv, t_param **mlx);
 int					key_manager(int keycode, t_param **mlx);
+int					cross_manager(t_param **mlx);
 char				*map_to_string(char *map, t_param **mlx);
 void				pixel_linker(t_coord **pos, t_param **mlx);
 void				map_to_tab(t_param **mlx, char *map);
